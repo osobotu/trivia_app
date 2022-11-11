@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:number_trivia_app/features/date_trivia/date_trivia.dart';
-import 'package:number_trivia_app/features/date_trivia/domain/usecases/get_date_trivia.dart';
 
 @GenerateNiceMocks([MockSpec<DateTriviaRepository>()])
 import 'get_date_trivia_test.mocks.dart';
