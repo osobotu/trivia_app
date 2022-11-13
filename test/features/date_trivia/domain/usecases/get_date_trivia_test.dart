@@ -18,7 +18,8 @@ void main() {
 
   const testMonth = 10;
   const testDay = 13;
-  const testDateTrivia = DateTrivia(text: 'test');
+
+  const testDateTrivia = DateTrivia(text: 'Test', number: 61, year: 1954);
 
   test('should get a date trivia for the given date', () async {
     when(mockDateTriviaRepository.getDateTrivia(month: testMonth, day: testDay))
