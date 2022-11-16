@@ -12,5 +12,5 @@ class DateTrivia extends Equatable {
   });
 
   @override
-  List<Object?> get props => [text];
+  List<Object?> get props => [text, number, year];
 }
