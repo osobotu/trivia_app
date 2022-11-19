@@ -111,3 +111,43 @@ class MockNetworkInfo extends _i1.Mock implements _i4.NetworkInfo {
         returnValueForMissingStub: _i3.Future<bool>.value(false),
       ) as _i3.Future<bool>);
 }
+
+/// A class which mocks [DateTriviaLocalDataSource].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockDateTriviaLocalDataSource extends _i1.Mock
+    implements _i2.DateTriviaLocalDataSource {
+  @override
+  _i3.Future<_i2.DateTriviaModel> getLastDateTrivia() => (super.noSuchMethod(
+        Invocation.method(
+          #getLastDateTrivia,
+          [],
+        ),
+        returnValue:
+            _i3.Future<_i2.DateTriviaModel>.value(_FakeDateTriviaModel_0(
+          this,
+          Invocation.method(
+            #getLastDateTrivia,
+            [],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i3.Future<_i2.DateTriviaModel>.value(_FakeDateTriviaModel_0(
+          this,
+          Invocation.method(
+            #getLastDateTrivia,
+            [],
+          ),
+        )),
+      ) as _i3.Future<_i2.DateTriviaModel>);
+  @override
+  _i3.Future<void> cacheDateTrivia(_i2.DateTriviaModel? triviaToCache) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #cacheDateTrivia,
+          [triviaToCache],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
+}
