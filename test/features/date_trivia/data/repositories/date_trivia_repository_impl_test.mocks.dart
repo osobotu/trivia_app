@@ -6,7 +6,7 @@
 import 'dart:async' as _i3;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:number_trivia_app/core/platform/network_info.dart' as _i4;
+import 'package:number_trivia_app/core/network/network_info.dart' as _i4;
 import 'package:number_trivia_app/features/date_trivia/date_trivia.dart' as _i2;
 
 // ignore_for_file: type=lint
