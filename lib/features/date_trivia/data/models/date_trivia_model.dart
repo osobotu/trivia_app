@@ -1,4 +1,6 @@
 import 'package:number_trivia_app/features/date_trivia/domain/entities/entities.dart';
+import 'package:number_trivia_app/features/favorite_trivia/data/models/models.dart';
+import 'package:uuid/uuid.dart';
 
 class DateTriviaModel extends DateTrivia {
   const DateTriviaModel(
@@ -18,5 +20,15 @@ class DateTriviaModel extends DateTrivia {
       'number': number,
       'year': year,
     };
+  }
+
+  FavoriteDateTriviaModel toFavorite() {
+    return FavoriteDateTriviaModel(
+      createdAt: DateTime.now(),
+      number: number,
+      text: text,
+      year: year,
+      id: const Uuid().v4(),
+    );
   }
 }

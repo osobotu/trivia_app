@@ -1,0 +1,8 @@
+/// This file holds the string used by [SharedPreference]
+/// to cache data.
+
+const CACHED_DATE_TRIVIA = 'CACHED_DATE_TRIVIA';
+const CACHED_NUMBER_TRIVIA = 'CACHED_NUMBER_TRIVIA';
+
+const FAVORITE_DATE_TRIVIA = 'FAVORITE_DATE_TRIVIA';
+const FAVORITE_NUMBER_TRIVIA = 'FAVORITE_NUMBER_TRIVIA';

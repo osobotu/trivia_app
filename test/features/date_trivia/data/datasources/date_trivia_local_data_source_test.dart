@@ -5,6 +5,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:number_trivia_app/core/core.dart';
 import 'package:number_trivia_app/features/date_trivia/date_trivia.dart';
+import 'package:number_trivia_app/features/favorite_trivia/favorite_trivia.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -72,6 +73,39 @@ void main() {
             mockSharedPreferences.setString(
                 CACHED_DATE_TRIVIA, expectedJsonString),
           );
+        },
+      );
+    },
+  );
+
+  group(
+    'addDateTriviaToFavorites',
+    () {
+      final testFavoriteDateTriviaModel = FavoriteDateTriviaModel(
+        id: 'id',
+        text: 'Test Text',
+        number: 61,
+        year: 1922,
+        createdAt: DateTime(2022),
+      );
+
+      test(
+        'should call SharedPreferences to cache the data',
+        () {
+          dataSource.addDateTriviaToFavorites(testFavoriteDateTriviaModel);
+
+          String favoriteDateTriviaString =
+              mockSharedPreferences.getString(FAVORITE_DATE_TRIVIA).toString();
+          final favoriteDateTrivia = List<Map<dynamic, dynamic>>.from(
+                  jsonDecode(favoriteDateTriviaString))
+              .map(
+                (jsonMap) => FavoriteDateTriviaModel.fromJson(
+                  Map<String, dynamic>.from(jsonMap),
+                ),
+              )
+              .toList();
+
+          expect(testFavoriteDateTriviaModel, favoriteDateTrivia.last);
         },
       );
     },

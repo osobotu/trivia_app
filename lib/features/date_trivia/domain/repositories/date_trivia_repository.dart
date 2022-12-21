@@ -7,4 +7,6 @@ abstract class DateTriviaRepository {
       {required int month, required int day});
 
   Future<Either<Failure, DateTrivia>> getRandomDateTrivia();
+
+  Future<void> addDateTriviaToFavorites(DateTrivia dateTrivia);
 }

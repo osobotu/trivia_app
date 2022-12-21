@@ -26,6 +26,12 @@ class DateTriviaRepositoryImpl implements DateTriviaRepository {
     return await _getDateTrivia(() => remoteDataSource.getRandomDateTrivia());
   }
 
+  @override
+  Future<void> addDateTriviaToFavorites(DateTrivia dateTrivia) {
+    // TODO: implement addDateTriviaToFavorites
+    throw UnimplementedError();
+  }
+
   Future<Either<Failure, DateTrivia>> _getDateTrivia(
       _ConcreteOrRandom getConcreteOrRandom) async {
     if (await networkInfo.isConnected) {
