@@ -78,36 +78,36 @@ void main() {
     },
   );
 
-  group(
-    'addDateTriviaToFavorites',
-    () {
-      final testFavoriteDateTriviaModel = FavoriteDateTriviaModel(
-        id: 'id',
-        text: 'Test Text',
-        number: 61,
-        year: 1922,
-        createdAt: DateTime(2022),
-      );
+  // group(
+  //   'addDateTriviaToFavorites',
+  //   () {
+  //     final testFavoriteDateTriviaModel = FavoriteDateTriviaModel(
+  //       id: 'id',
+  //       text: 'Test Text',
+  //       number: 61,
+  //       year: 1922,
+  //       createdAt: DateTime(2022),
+  //     );
 
-      test(
-        'should call SharedPreferences to cache the data',
-        () {
-          dataSource.addDateTriviaToFavorites(testFavoriteDateTriviaModel);
+  //     test(
+  //       'should call SharedPreferences to cache the data',
+  //       () {
+  //         dataSource.addDateTriviaToFavorites(testFavoriteDateTriviaModel);
 
-          String favoriteDateTriviaString =
-              mockSharedPreferences.getString(FAVORITE_DATE_TRIVIA).toString();
-          final favoriteDateTrivia = List<Map<dynamic, dynamic>>.from(
-                  jsonDecode(favoriteDateTriviaString))
-              .map(
-                (jsonMap) => FavoriteDateTriviaModel.fromJson(
-                  Map<String, dynamic>.from(jsonMap),
-                ),
-              )
-              .toList();
+  //         String favoriteDateTriviaString =
+  //             mockSharedPreferences.getString(FAVORITE_DATE_TRIVIA).toString();
+  //         final favoriteDateTrivia = List<Map<dynamic, dynamic>>.from(
+  //                 jsonDecode(favoriteDateTriviaString))
+  //             .map(
+  //               (jsonMap) => FavoriteDateTriviaModel.fromJson(
+  //                 Map<String, dynamic>.from(jsonMap),
+  //               ),
+  //             )
+  //             .toList();
 
-          expect(testFavoriteDateTriviaModel, favoriteDateTrivia.last);
-        },
-      );
-    },
-  );
+  //         expect(testFavoriteDateTriviaModel, favoriteDateTrivia.last);
+  //       },
+  //     );
+  //   },
+  // );
 }

@@ -32,17 +32,6 @@ class _FakeEither_0<L, R> extends _i1.SmartFake implements _i2.Either<L, R> {
         );
 }
 
-class _FakeFavoriteNumberTrivia_1 extends _i1.SmartFake
-    implements _i3.FavoriteNumberTrivia {
-  _FakeFavoriteNumberTrivia_1(
-    Object parent,
-    Invocation parentInvocation,
-  ) : super(
-          parent,
-          parentInvocation,
-        );
-}
-
 /// A class which mocks [FavoriteNumberTriviaRepository].
 ///
 /// See the documentation for Mockito's code generation for more information.
@@ -76,38 +65,4 @@ class MockFavoriteNumberTriviaRepository extends _i1.Mock
           ),
         )),
       ) as _i4.Future<_i2.Either<_i5.Failure, List<_i3.FavoriteNumberTrivia>>>);
-  @override
-  _i4.Future<void> addNumberTrivia(_i3.FavoriteNumberTrivia? numberTrivia) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #addNumberTrivia,
-          [numberTrivia],
-        ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
-  @override
-  _i4.Future<_i3.FavoriteNumberTrivia> removeNumberTrivia(String? id) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #removeNumberTrivia,
-          [id],
-        ),
-        returnValue: _i4.Future<_i3.FavoriteNumberTrivia>.value(
-            _FakeFavoriteNumberTrivia_1(
-          this,
-          Invocation.method(
-            #removeNumberTrivia,
-            [id],
-          ),
-        )),
-        returnValueForMissingStub: _i4.Future<_i3.FavoriteNumberTrivia>.value(
-            _FakeFavoriteNumberTrivia_1(
-          this,
-          Invocation.method(
-            #removeNumberTrivia,
-            [id],
-          ),
-        )),
-      ) as _i4.Future<_i3.FavoriteNumberTrivia>);
 }

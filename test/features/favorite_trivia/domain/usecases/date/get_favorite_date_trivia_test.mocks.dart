@@ -32,17 +32,6 @@ class _FakeEither_0<L, R> extends _i1.SmartFake implements _i2.Either<L, R> {
         );
 }
 
-class _FakeFavoriteDateTrivia_1 extends _i1.SmartFake
-    implements _i3.FavoriteDateTrivia {
-  _FakeFavoriteDateTrivia_1(
-    Object parent,
-    Invocation parentInvocation,
-  ) : super(
-          parent,
-          parentInvocation,
-        );
-}
-
 /// A class which mocks [FavoriteDateTriviaRepository].
 ///
 /// See the documentation for Mockito's code generation for more information.
@@ -76,38 +65,4 @@ class MockFavoriteDateTriviaRepository extends _i1.Mock
           ),
         )),
       ) as _i4.Future<_i2.Either<_i5.Failure, List<_i3.FavoriteDateTrivia>>>);
-  @override
-  _i4.Future<void> addDateTrivia(_i3.FavoriteDateTrivia? dateTrivia) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #addDateTrivia,
-          [dateTrivia],
-        ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
-  @override
-  _i4.Future<_i3.FavoriteDateTrivia> removeDateTrivia(String? id) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #removeDateTrivia,
-          [id],
-        ),
-        returnValue:
-            _i4.Future<_i3.FavoriteDateTrivia>.value(_FakeFavoriteDateTrivia_1(
-          this,
-          Invocation.method(
-            #removeDateTrivia,
-            [id],
-          ),
-        )),
-        returnValueForMissingStub:
-            _i4.Future<_i3.FavoriteDateTrivia>.value(_FakeFavoriteDateTrivia_1(
-          this,
-          Invocation.method(
-            #removeDateTrivia,
-            [id],
-          ),
-        )),
-      ) as _i4.Future<_i3.FavoriteDateTrivia>);
 }

@@ -8,6 +8,8 @@ import 'dart:async' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:number_trivia_app/core/core.dart' as _i4;
 import 'package:number_trivia_app/features/date_trivia/date_trivia.dart' as _i2;
+import 'package:number_trivia_app/features/favorite_trivia/favorite_trivia.dart'
+    as _i5;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -146,6 +148,17 @@ class MockDateTriviaLocalDataSource extends _i1.Mock
         Invocation.method(
           #cacheDateTrivia,
           [triviaToCache],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
+  @override
+  _i3.Future<void> addDateTriviaToFavorites(
+          _i5.FavoriteDateTriviaModel? favoriteDateTrivia) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #addDateTriviaToFavorites,
+          [favoriteDateTrivia],
         ),
         returnValue: _i3.Future<void>.value(),
         returnValueForMissingStub: _i3.Future<void>.value(),

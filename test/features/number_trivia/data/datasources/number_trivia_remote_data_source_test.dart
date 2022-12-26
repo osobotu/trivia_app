@@ -34,15 +34,16 @@ void main() {
   });
 
   group(
-    'getConcreteNumberTrivia',
+    'getDateTrivia',
     () {
       const testNumber = 1;
+
       final testNumberTriviaModel =
           NumberTriviaModel.fromJson(json.decode(fixture('trivia.json')));
 
       test(
-        '''should perform a GET request on a URL with number being the endpoint 
-        and with application/json header ''',
+        '''should perform a GET request on a URL with date being the endpoint 
+          and with application/json header''',
         () {
           setUpMockHttpClientSuccess200();
 
@@ -73,54 +74,8 @@ void main() {
           setUpMockHttpClientFailure404();
           final call = dataSource.getConcreteNumberTrivia;
 
-          expect(() => call(testNumber), throwsA(isA<ServerException>()));
-        },
-      );
-    },
-  );
-
-  group(
-    'getRandomNumberTrivia',
-    () {
-      const testNumber = 1;
-      final testNumberTriviaModel =
-          NumberTriviaModel.fromJson(json.decode(fixture('trivia.json')));
-
-      test(
-        '''should perform a GET request on a URL with number being the endpoint 
-        and with application/json header ''',
-        () {
-          setUpMockHttpClientSuccess200();
-
-          dataSource.getRandomNumberTrivia();
-
-          verify(
-            mockHttpClient.get(
-              Uri.parse(APIConstants.randomNumberEndpoint),
-              headers: APIConstants.headers,
-            ),
-          );
-        },
-      );
-
-      test(
-        'should return NumberTrivia when the response is 200 (success)',
-        () async {
-          setUpMockHttpClientSuccess200();
-          final result = await dataSource.getRandomNumberTrivia();
-
-          expect(result, equals(testNumberTriviaModel));
-        },
-      );
-
-      test(
-        'should throw a ServerException when the response code is 404 or other',
-        () async {
-          setUpMockHttpClientFailure404();
-          final call = dataSource.getRandomNumberTrivia;
-
           expect(
-            () => call(),
+            () => call(testNumber),
             throwsA(isA<ServerException>()),
           );
         },

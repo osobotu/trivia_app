@@ -101,4 +101,14 @@ class MockDateTriviaRepository extends _i1.Mock
           ),
         )),
       ) as _i4.Future<_i2.Either<_i5.Failure, _i3.DateTrivia>>);
+  @override
+  _i4.Future<void> addDateTriviaToFavorites(_i3.DateTrivia? dateTrivia) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #addDateTriviaToFavorites,
+          [dateTrivia],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
 }
