@@ -4,10 +4,10 @@ import 'package:number_trivia_app/core/core.dart';
 import 'package:number_trivia_app/features/date_trivia/domain/entities/entities.dart';
 import 'package:number_trivia_app/features/date_trivia/domain/repositories/repositories.dart';
 
-class GetDateTrivia extends UseCase<DateTrivia, DateParams> {
+class GetConcreteDateTrivia extends UseCase<DateTrivia, DateParams> {
   final DateTriviaRepository repository;
 
-  GetDateTrivia(this.repository);
+  GetConcreteDateTrivia(this.repository);
   @override
   Future<Either<Failure, DateTrivia>> call(DateParams params) async {
     return await repository.getDateTrivia(month: params.month, day: params.day);

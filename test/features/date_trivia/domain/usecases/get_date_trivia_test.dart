@@ -8,12 +8,12 @@ import 'package:number_trivia_app/features/date_trivia/date_trivia.dart';
 import 'get_date_trivia_test.mocks.dart';
 
 void main() {
-  late GetDateTrivia usecase;
+  late GetConcreteDateTrivia usecase;
   late MockDateTriviaRepository mockDateTriviaRepository;
 
   setUp(() {
     mockDateTriviaRepository = MockDateTriviaRepository();
-    usecase = GetDateTrivia(mockDateTriviaRepository);
+    usecase = GetConcreteDateTrivia(mockDateTriviaRepository);
   });
 
   const testMonth = 10;
@@ -25,7 +25,7 @@ void main() {
     when(mockDateTriviaRepository.getDateTrivia(month: testMonth, day: testDay))
         .thenAnswer((_) async => const Right(testDateTrivia));
 
-    final result = await usecase(Params(month: testMonth, day: testDay));
+    final result = await usecase(DateParams(month: testMonth, day: testDay));
 
     expect(result, const Right(testDateTrivia));
 

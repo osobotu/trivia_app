@@ -5,10 +5,10 @@ abstract class DateTriviaEvent extends Equatable {
   List<Object?> get props => [];
 }
 
-class GetTriviaForDate extends DateTriviaEvent {
-  final String date;
+class GetTriviaForConcreteDate extends DateTriviaEvent {
+  final DateTime date;
 
-  GetTriviaForDate(this.date);
+  GetTriviaForConcreteDate(this.date);
   @override
   List<Object?> get props => [date];
 }
