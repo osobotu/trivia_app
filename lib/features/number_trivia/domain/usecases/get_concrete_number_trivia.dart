@@ -18,5 +18,5 @@ class Params extends Equatable {
   final int number;
   const Params({required this.number});
   @override
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [number];
 }

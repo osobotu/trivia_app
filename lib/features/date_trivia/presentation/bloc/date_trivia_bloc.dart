@@ -22,6 +22,7 @@ class DateTriviaBloc extends Bloc<DateTriviaEvent, DateTriviaState> {
         _inputConverter = inputConverter,
         super(Empty()) {
     on<GetTriviaForConcreteDate>(_onGetTriviaForConcreteDate);
+    on<GetTriviaForRandomDate>(_onGetTriviaForRandomDate);
   }
 
   Future<void> _onGetTriviaForConcreteDate(
@@ -32,7 +33,41 @@ class DateTriviaBloc extends Bloc<DateTriviaEvent, DateTriviaState> {
 
     inputEither.fold(
       (failure) => emit(Error(message: INVALID_INPUT_FAILURE_MESSAGE)),
-      (dateTrivia) => throw UnimplementedError(),
+      (dateParams) async {
+        emit(Loading());
+        final failureOrTrivia = await _concrete(dateParams);
+        _emitLoadedOrErrorState(emit, failureOrTrivia);
+      },
     );
+  }
+
+  Future<void> _onGetTriviaForRandomDate(
+    GetTriviaForRandomDate event,
+    Emitter<DateTriviaState> emit,
+  ) async {
+    emit(Loading());
+    final failureOrTrivia = await _random(NoParams());
+    _emitLoadedOrErrorState(emit, failureOrTrivia);
+  }
+
+  void _emitLoadedOrErrorState(
+    Emitter<DateTriviaState> emit,
+    Either<Failure, DateTrivia> failureOrTrivia,
+  ) {
+    failureOrTrivia.fold(
+      (failure) => emit(Error(message: _mapFailureToMessage(failure))),
+      (trivia) => emit(Loaded(trivia: trivia)),
+    );
+  }
+
+  String _mapFailureToMessage(Failure failure) {
+    switch (failure.runtimeType) {
+      case ServerFailure:
+        return SERVER_FAILURE_MESSAGE;
+      case CacheFailure:
+        return CACHE_FAILURE_MESSAGE;
+      default:
+        return "Unexpected Error";
+    }
   }
 }
