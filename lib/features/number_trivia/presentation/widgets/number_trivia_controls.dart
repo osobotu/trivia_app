@@ -55,7 +55,7 @@ class _NumberTriviaControlsState extends State<NumberTriviaControls> {
             Expanded(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(),
-                child: const Text('Get Random Trivia'),
+                child: const Text('Get Random'),
                 onPressed: () {
                   controller.clear();
                   FocusManager.instance.primaryFocus?.unfocus();

@@ -2,11 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:number_trivia_app/features/date_trivia/date_trivia.dart';
 
-class DateTriviaControls extends StatelessWidget {
+class DateTriviaControls extends StatefulWidget {
   const DateTriviaControls({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<DateTriviaControls> createState() => _DateTriviaControlsState();
+}
+
+class _DateTriviaControlsState extends State<DateTriviaControls> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -24,10 +29,11 @@ class DateTriviaControls extends StatelessWidget {
                 final selectedDate = await showDatePicker(
                   context: context,
                   initialDate: DateTime.now(),
-                  firstDate: DateTime(1900),
+                  firstDate: DateTime(1000),
                   lastDate: DateTime(3000),
                 );
                 if (selectedDate != null) {
+                  if (!mounted) return;
                   context
                       .read<DateTriviaBloc>()
                       .add(GetTriviaForConcreteDate(selectedDate));
@@ -43,7 +49,7 @@ class DateTriviaControls extends StatelessWidget {
                         .read<DateTriviaBloc>()
                         .add(GetTriviaForRandomDate());
                   },
-                  child: const Text('Get Random Date Trivia')),
+                  child: const Text('Get Random')),
             ),
           ],
         ),
