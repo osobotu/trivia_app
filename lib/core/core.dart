@@ -5,3 +5,4 @@ export 'network/api_constants.dart';
 export 'constants/local_storage.dart';
 export 'utils/utils.dart';
 export 'constants/error_messages.dart';
+export 'widgets/core_widgets.dart';

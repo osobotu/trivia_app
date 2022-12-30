@@ -27,8 +27,7 @@ class DateTriviaRemoteDataSourceImpl implements DateTriviaRemoteDataSource {
 
   @override
   Future<DateTriviaModel> getRandomDateTrivia() {
-    // TODO: implement getRandomDateTrivia
-    throw UnimplementedError();
+    return _getDateTriviaFromUrl(APIConstants.randomDateEndpoint);
   }
 
   Future<DateTriviaModel> _getDateTriviaFromUrl(String url) async {
@@ -36,6 +35,7 @@ class DateTriviaRemoteDataSourceImpl implements DateTriviaRemoteDataSource {
       Uri.parse(url),
       headers: APIConstants.headers,
     );
+
     if (response.statusCode == 200) {
       return DateTriviaModel.fromJson(json.decode(response.body));
     } else {

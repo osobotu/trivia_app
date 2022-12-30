@@ -9,7 +9,7 @@ class GetRandomDateTrivia extends UseCase<DateTrivia, NoParams> {
   GetRandomDateTrivia(this.repository);
 
   @override
-  Future<Either<Failure, DateTrivia>> call(NoParams params) {
-    return repository.getRandomDateTrivia();
+  Future<Either<Failure, DateTrivia>> call(NoParams params) async {
+    return await repository.getRandomDateTrivia();
   }
 }

@@ -31,8 +31,8 @@ class DateTriviaBloc extends Bloc<DateTriviaEvent, DateTriviaState> {
   ) async {
     final inputEither = _inputConverter.getMonthAndDayFromDateTime(event.date);
 
-    inputEither.fold(
-      (failure) => emit(Error(message: INVALID_INPUT_FAILURE_MESSAGE)),
+    await inputEither.fold(
+      (failure) async => emit(Error(message: INVALID_INPUT_FAILURE_MESSAGE)),
       (dateParams) async {
         emit(Loading());
         final failureOrTrivia = await _concrete(dateParams);

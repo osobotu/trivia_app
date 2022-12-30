@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:number_trivia_app/features/number_trivia/presentation/view/number_trivia_page.dart';
+import 'package:number_trivia_app/features/date_trivia/date_trivia.dart';
+import 'package:number_trivia_app/features/number_trivia/number_trivia.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -39,9 +40,7 @@ class _AppPageState extends State<AppPage> {
           Center(
             child: Text('Favorites'),
           ),
-          Center(
-            child: Text('Date Trivia'),
-          ),
+          DateTriviaPage(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
