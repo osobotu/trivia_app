@@ -65,4 +65,32 @@ class MockFavoriteDateTriviaRepository extends _i1.Mock
           ),
         )),
       ) as _i4.Future<_i2.Either<_i5.Failure, List<_i3.FavoriteDateTrivia>>>);
+  @override
+  _i4.Future<
+      _i2.Either<_i5.Failure, _i3.FavoriteDateTrivia>> removeFavoriteDateTrivia(
+          String? id) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #removeFavoriteDateTrivia,
+          [id],
+        ),
+        returnValue:
+            _i4.Future<_i2.Either<_i5.Failure, _i3.FavoriteDateTrivia>>.value(
+                _FakeEither_0<_i5.Failure, _i3.FavoriteDateTrivia>(
+          this,
+          Invocation.method(
+            #removeFavoriteDateTrivia,
+            [id],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i4.Future<_i2.Either<_i5.Failure, _i3.FavoriteDateTrivia>>.value(
+                _FakeEither_0<_i5.Failure, _i3.FavoriteDateTrivia>(
+          this,
+          Invocation.method(
+            #removeFavoriteDateTrivia,
+            [id],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.Failure, _i3.FavoriteDateTrivia>>);
 }

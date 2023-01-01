@@ -65,4 +65,32 @@ class MockFavoriteNumberTriviaRepository extends _i1.Mock
           ),
         )),
       ) as _i4.Future<_i2.Either<_i5.Failure, List<_i3.FavoriteNumberTrivia>>>);
+  @override
+  _i4.Future<
+      _i2.Either<_i5.Failure,
+          _i3.FavoriteNumberTrivia>> removeFavoriteNumberTrivia(String? id) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #removeFavoriteNumberTrivia,
+          [id],
+        ),
+        returnValue:
+            _i4.Future<_i2.Either<_i5.Failure, _i3.FavoriteNumberTrivia>>.value(
+                _FakeEither_0<_i5.Failure, _i3.FavoriteNumberTrivia>(
+          this,
+          Invocation.method(
+            #removeFavoriteNumberTrivia,
+            [id],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i4.Future<_i2.Either<_i5.Failure, _i3.FavoriteNumberTrivia>>.value(
+                _FakeEither_0<_i5.Failure, _i3.FavoriteNumberTrivia>(
+          this,
+          Invocation.method(
+            #removeFavoriteNumberTrivia,
+            [id],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.Failure, _i3.FavoriteNumberTrivia>>);
 }
