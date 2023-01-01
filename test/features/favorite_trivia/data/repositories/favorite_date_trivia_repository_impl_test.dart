@@ -50,7 +50,7 @@ void main() {
       );
 
       test(
-        'should return a List<FavoriteTrivia> if user has favorites',
+        'should return a List<FavoriteDateTrivia> if user has favorites',
         () async {
           when(mockFavoriteDateTriviaLocalDataSource.getFavoriteDateTrivia())
               .thenAnswer((_) async => savedFavorites);
@@ -64,7 +64,7 @@ void main() {
       );
 
       test(
-        'should return a [Cache Failure] if call fails to get saved data',
+        'should return a [CacheFailure] if call fails to get saved data',
         () async {
           when(mockFavoriteDateTriviaLocalDataSource.getFavoriteDateTrivia())
               .thenThrow(CacheException());
