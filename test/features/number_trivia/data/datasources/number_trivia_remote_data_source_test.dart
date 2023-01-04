@@ -42,8 +42,7 @@ void main() {
           NumberTriviaModel.fromJson(json.decode(fixture('trivia.json')));
 
       test(
-        '''should perform a GET request on a URL with date being the endpoint 
-          and with application/json header''',
+        'should perform a GET request on a URL with date being the endpoint and with application/json header',
         () {
           setUpMockHttpClientSuccess200();
 

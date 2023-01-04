@@ -6,7 +6,6 @@ class FavoriteDateTriviaModel extends FavoriteDateTrivia {
     required super.number,
     required super.text,
     required super.year,
-    required super.id,
   });
 
   factory FavoriteDateTriviaModel.fromJson(Map<String, dynamic> json) {
@@ -15,7 +14,6 @@ class FavoriteDateTriviaModel extends FavoriteDateTrivia {
       number: json['number'],
       text: json['text'],
       year: json['year'],
-      id: json['id'],
     );
   }
 
@@ -24,7 +22,6 @@ class FavoriteDateTriviaModel extends FavoriteDateTrivia {
       "text": text,
       "number": number,
       "year": year,
-      "id": id,
       "createdAt": createdAt.toIso8601String(),
     };
   }

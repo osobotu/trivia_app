@@ -22,7 +22,6 @@ void main() {
     number: 1,
     text: 'Test Text',
     year: 2022,
-    id: 'id',
   );
   final testList = [testFavoriteDateTrivia];
   test(

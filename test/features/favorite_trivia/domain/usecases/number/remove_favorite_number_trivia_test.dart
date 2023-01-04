@@ -20,7 +20,6 @@ void main() {
     createdAt: DateTime.now(),
     number: 1,
     text: "Test Text",
-    id: testId,
   );
 
   test(

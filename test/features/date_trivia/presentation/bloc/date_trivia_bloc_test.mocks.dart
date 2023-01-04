@@ -13,6 +13,10 @@ import 'package:number_trivia_app/features/date_trivia/domain/entities/entities.
     as _i7;
 import 'package:number_trivia_app/features/date_trivia/domain/repositories/repositories.dart'
     as _i2;
+import 'package:number_trivia_app/features/favorite_trivia/favorite_trivia.dart'
+    as _i8;
+import 'package:number_trivia_app/features/number_trivia/number_trivia.dart'
+    as _i9;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -185,4 +189,52 @@ class MockInputConverter extends _i1.Mock implements _i6.InputConverter {
           ),
         ),
       ) as _i3.Either<_i6.Failure, _i4.DateParams>);
+  @override
+  _i3.Either<_i6.Failure, _i8.FavoriteDateTrivia> triviaToFavoriteDate(
+          _i7.DateTrivia? dateTrivia) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #triviaToFavoriteDate,
+          [dateTrivia],
+        ),
+        returnValue: _FakeEither_1<_i6.Failure, _i8.FavoriteDateTrivia>(
+          this,
+          Invocation.method(
+            #triviaToFavoriteDate,
+            [dateTrivia],
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeEither_1<_i6.Failure, _i8.FavoriteDateTrivia>(
+          this,
+          Invocation.method(
+            #triviaToFavoriteDate,
+            [dateTrivia],
+          ),
+        ),
+      ) as _i3.Either<_i6.Failure, _i8.FavoriteDateTrivia>);
+  @override
+  _i3.Either<_i6.Failure, _i8.FavoriteNumberTrivia> triviaToFavoriteNumber(
+          _i9.NumberTrivia? numberTrivia) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #triviaToFavoriteNumber,
+          [numberTrivia],
+        ),
+        returnValue: _FakeEither_1<_i6.Failure, _i8.FavoriteNumberTrivia>(
+          this,
+          Invocation.method(
+            #triviaToFavoriteNumber,
+            [numberTrivia],
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeEither_1<_i6.Failure, _i8.FavoriteNumberTrivia>(
+          this,
+          Invocation.method(
+            #triviaToFavoriteNumber,
+            [numberTrivia],
+          ),
+        ),
+      ) as _i3.Either<_i6.Failure, _i8.FavoriteNumberTrivia>);
 }

@@ -20,7 +20,7 @@ void main() {
   );
 
   final testFavoriteNumberTrivia = FavoriteNumberTrivia(
-      createdAt: DateTime.now(), number: 1, text: 'Test Text', id: 'id');
+      createdAt: DateTime.now(), number: 1, text: 'Test Text');
   final testList = [testFavoriteNumberTrivia];
 
   test(

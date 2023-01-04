@@ -23,7 +23,7 @@ void main() {
 
   void setUpMockHttpClientFailure404() {
     when(mockHttpClient.get(any, headers: anyNamed('headers'))).thenAnswer(
-      (realInvocation) async => http.Response('Something went wrong', 404),
+      (_) async => http.Response('Something went wrong', 404),
     );
   }
 
@@ -41,8 +41,7 @@ void main() {
           DateTriviaModel.fromJson(json.decode(fixture('date_trivia.json')));
 
       test(
-        '''should perform a GET request on a URL with date being the endpoint 
-          and with application/json header''',
+        'should perform a GET request on a URL with date being the endpoint and with application/json header',
         () {
           setUpMockHttpClientSuccess200();
 

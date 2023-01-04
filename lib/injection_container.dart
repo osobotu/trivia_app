@@ -81,7 +81,10 @@ Future<void> initDateTriviaDependencies() async {
     () => DateTriviaRemoteDataSourceImpl(client: sl()),
   );
   sl.registerLazySingleton<DateTriviaLocalDataSource>(
-    () => DateTriviaLocalDataSourceImpl(sharedPreferences: sl()),
+    () => DateTriviaLocalDataSourceImpl(
+      sharedPreferences: sl(),
+      inputConverter: sl(),
+    ),
   );
 }
 

@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:number_trivia_app/features/date_trivia/date_trivia.dart';
-import 'package:number_trivia_app/features/favorite_trivia/favorite_trivia.dart';
 
 import '../../../../fixtures/fixture_reader.dart';
 
@@ -46,25 +45,6 @@ void main() {
           };
 
           expect(result, expectedJsonMap);
-        },
-      );
-    },
-  );
-
-  group(
-    'toFavorite',
-    () {
-      test(
-        'should return [FavoriteDateTriviaModel] with the correct data types',
-        () {
-          final result = testDateTriviaModel.toFavorite();
-          expect(
-            result,
-            isA<FavoriteDateTriviaModel>()
-                .having((f) => f.createdAt, 'should be a [DateTime]',
-                    isA<DateTime>())
-                .having((f) => f.id, 'should be a [String]', isA<String>()),
-          );
         },
       );
     },

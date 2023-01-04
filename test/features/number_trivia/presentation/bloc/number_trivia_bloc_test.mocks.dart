@@ -9,6 +9,8 @@ import 'package:dartz/dartz.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:number_trivia_app/core/core.dart' as _i5;
 import 'package:number_trivia_app/features/date_trivia/date_trivia.dart' as _i6;
+import 'package:number_trivia_app/features/favorite_trivia/favorite_trivia.dart'
+    as _i7;
 import 'package:number_trivia_app/features/number_trivia/number_trivia.dart'
     as _i2;
 
@@ -185,4 +187,52 @@ class MockInputConverter extends _i1.Mock implements _i5.InputConverter {
           ),
         ),
       ) as _i3.Either<_i5.Failure, _i6.DateParams>);
+  @override
+  _i3.Either<_i5.Failure, _i7.FavoriteDateTrivia> triviaToFavoriteDate(
+          _i6.DateTrivia? dateTrivia) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #triviaToFavoriteDate,
+          [dateTrivia],
+        ),
+        returnValue: _FakeEither_1<_i5.Failure, _i7.FavoriteDateTrivia>(
+          this,
+          Invocation.method(
+            #triviaToFavoriteDate,
+            [dateTrivia],
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeEither_1<_i5.Failure, _i7.FavoriteDateTrivia>(
+          this,
+          Invocation.method(
+            #triviaToFavoriteDate,
+            [dateTrivia],
+          ),
+        ),
+      ) as _i3.Either<_i5.Failure, _i7.FavoriteDateTrivia>);
+  @override
+  _i3.Either<_i5.Failure, _i7.FavoriteNumberTrivia> triviaToFavoriteNumber(
+          _i2.NumberTrivia? numberTrivia) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #triviaToFavoriteNumber,
+          [numberTrivia],
+        ),
+        returnValue: _FakeEither_1<_i5.Failure, _i7.FavoriteNumberTrivia>(
+          this,
+          Invocation.method(
+            #triviaToFavoriteNumber,
+            [numberTrivia],
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeEither_1<_i5.Failure, _i7.FavoriteNumberTrivia>(
+          this,
+          Invocation.method(
+            #triviaToFavoriteNumber,
+            [numberTrivia],
+          ),
+        ),
+      ) as _i3.Either<_i5.Failure, _i7.FavoriteNumberTrivia>);
 }

@@ -5,7 +5,6 @@ import 'package:number_trivia_app/features/favorite_trivia/favorite_trivia.dart'
 
 void main() {
   final testFavoriteNumberTriviaModel = FavoriteNumberTriviaModel(
-    id: 'id',
     createdAt: DateTime(2023),
     number: 1,
     text: 'Test Text',
@@ -33,7 +32,6 @@ void main() {
             final expectedMap = {
               "text": "Test Text",
               "createdAt": DateTime(2023).toIso8601String(),
-              "id": "id",
               "number": 1,
             };
 
@@ -51,7 +49,6 @@ void main() {
               final jsonMap = {
                 "text": "Test Text",
                 "createdAt": DateTime(2023).toIso8601String(),
-                "id": "id",
                 "number": 1,
               };
               final jsonString = jsonEncode(jsonMap);

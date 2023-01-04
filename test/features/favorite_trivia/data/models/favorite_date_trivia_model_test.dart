@@ -5,7 +5,6 @@ import 'package:number_trivia_app/features/favorite_trivia/favorite_trivia.dart'
 
 void main() {
   final testFavoriteDateTriviaModel = FavoriteDateTriviaModel(
-    id: 'id',
     text: 'Test Text',
     number: 61,
     year: 1922,
@@ -34,7 +33,6 @@ void main() {
             "text": 'Test Text',
             "number": 61,
             "year": 1922,
-            "id": 'id',
             "createdAt": DateTime(2022).toIso8601String(),
           };
 

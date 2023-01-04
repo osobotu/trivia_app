@@ -3,10 +3,17 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i3;
+import 'dart:async' as _i4;
 
+import 'package:dartz/dartz.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:shared_preferences/shared_preferences.dart' as _i2;
+import 'package:number_trivia_app/core/core.dart' as _i5;
+import 'package:number_trivia_app/features/date_trivia/date_trivia.dart' as _i6;
+import 'package:number_trivia_app/features/favorite_trivia/favorite_trivia.dart'
+    as _i7;
+import 'package:number_trivia_app/features/number_trivia/number_trivia.dart'
+    as _i8;
+import 'package:shared_preferences/shared_preferences.dart' as _i3;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -19,10 +26,20 @@ import 'package:shared_preferences/shared_preferences.dart' as _i2;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
+class _FakeEither_0<L, R> extends _i1.SmartFake implements _i2.Either<L, R> {
+  _FakeEither_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
 /// A class which mocks [SharedPreferences].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockSharedPreferences extends _i1.Mock implements _i2.SharedPreferences {
+class MockSharedPreferences extends _i1.Mock implements _i3.SharedPreferences {
   @override
   Set<String> getKeys() => (super.noSuchMethod(
         Invocation.method(
@@ -90,7 +107,7 @@ class MockSharedPreferences extends _i1.Mock implements _i2.SharedPreferences {
         returnValueForMissingStub: null,
       ) as List<String>?);
   @override
-  _i3.Future<bool> setBool(
+  _i4.Future<bool> setBool(
     String? key,
     bool? value,
   ) =>
@@ -102,11 +119,11 @@ class MockSharedPreferences extends _i1.Mock implements _i2.SharedPreferences {
             value,
           ],
         ),
-        returnValue: _i3.Future<bool>.value(false),
-        returnValueForMissingStub: _i3.Future<bool>.value(false),
-      ) as _i3.Future<bool>);
+        returnValue: _i4.Future<bool>.value(false),
+        returnValueForMissingStub: _i4.Future<bool>.value(false),
+      ) as _i4.Future<bool>);
   @override
-  _i3.Future<bool> setInt(
+  _i4.Future<bool> setInt(
     String? key,
     int? value,
   ) =>
@@ -118,11 +135,11 @@ class MockSharedPreferences extends _i1.Mock implements _i2.SharedPreferences {
             value,
           ],
         ),
-        returnValue: _i3.Future<bool>.value(false),
-        returnValueForMissingStub: _i3.Future<bool>.value(false),
-      ) as _i3.Future<bool>);
+        returnValue: _i4.Future<bool>.value(false),
+        returnValueForMissingStub: _i4.Future<bool>.value(false),
+      ) as _i4.Future<bool>);
   @override
-  _i3.Future<bool> setDouble(
+  _i4.Future<bool> setDouble(
     String? key,
     double? value,
   ) =>
@@ -134,11 +151,11 @@ class MockSharedPreferences extends _i1.Mock implements _i2.SharedPreferences {
             value,
           ],
         ),
-        returnValue: _i3.Future<bool>.value(false),
-        returnValueForMissingStub: _i3.Future<bool>.value(false),
-      ) as _i3.Future<bool>);
+        returnValue: _i4.Future<bool>.value(false),
+        returnValueForMissingStub: _i4.Future<bool>.value(false),
+      ) as _i4.Future<bool>);
   @override
-  _i3.Future<bool> setString(
+  _i4.Future<bool> setString(
     String? key,
     String? value,
   ) =>
@@ -150,11 +167,11 @@ class MockSharedPreferences extends _i1.Mock implements _i2.SharedPreferences {
             value,
           ],
         ),
-        returnValue: _i3.Future<bool>.value(false),
-        returnValueForMissingStub: _i3.Future<bool>.value(false),
-      ) as _i3.Future<bool>);
+        returnValue: _i4.Future<bool>.value(false),
+        returnValueForMissingStub: _i4.Future<bool>.value(false),
+      ) as _i4.Future<bool>);
   @override
-  _i3.Future<bool> setStringList(
+  _i4.Future<bool> setStringList(
     String? key,
     List<String>? value,
   ) =>
@@ -166,43 +183,142 @@ class MockSharedPreferences extends _i1.Mock implements _i2.SharedPreferences {
             value,
           ],
         ),
-        returnValue: _i3.Future<bool>.value(false),
-        returnValueForMissingStub: _i3.Future<bool>.value(false),
-      ) as _i3.Future<bool>);
+        returnValue: _i4.Future<bool>.value(false),
+        returnValueForMissingStub: _i4.Future<bool>.value(false),
+      ) as _i4.Future<bool>);
   @override
-  _i3.Future<bool> remove(String? key) => (super.noSuchMethod(
+  _i4.Future<bool> remove(String? key) => (super.noSuchMethod(
         Invocation.method(
           #remove,
           [key],
         ),
-        returnValue: _i3.Future<bool>.value(false),
-        returnValueForMissingStub: _i3.Future<bool>.value(false),
-      ) as _i3.Future<bool>);
+        returnValue: _i4.Future<bool>.value(false),
+        returnValueForMissingStub: _i4.Future<bool>.value(false),
+      ) as _i4.Future<bool>);
   @override
-  _i3.Future<bool> commit() => (super.noSuchMethod(
+  _i4.Future<bool> commit() => (super.noSuchMethod(
         Invocation.method(
           #commit,
           [],
         ),
-        returnValue: _i3.Future<bool>.value(false),
-        returnValueForMissingStub: _i3.Future<bool>.value(false),
-      ) as _i3.Future<bool>);
+        returnValue: _i4.Future<bool>.value(false),
+        returnValueForMissingStub: _i4.Future<bool>.value(false),
+      ) as _i4.Future<bool>);
   @override
-  _i3.Future<bool> clear() => (super.noSuchMethod(
+  _i4.Future<bool> clear() => (super.noSuchMethod(
         Invocation.method(
           #clear,
           [],
         ),
-        returnValue: _i3.Future<bool>.value(false),
-        returnValueForMissingStub: _i3.Future<bool>.value(false),
-      ) as _i3.Future<bool>);
+        returnValue: _i4.Future<bool>.value(false),
+        returnValueForMissingStub: _i4.Future<bool>.value(false),
+      ) as _i4.Future<bool>);
   @override
-  _i3.Future<void> reload() => (super.noSuchMethod(
+  _i4.Future<void> reload() => (super.noSuchMethod(
         Invocation.method(
           #reload,
           [],
         ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
+}
+
+/// A class which mocks [InputConverter].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockInputConverter extends _i1.Mock implements _i5.InputConverter {
+  @override
+  _i2.Either<_i5.Failure, int> stringToUnsignedInteger(String? str) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #stringToUnsignedInteger,
+          [str],
+        ),
+        returnValue: _FakeEither_0<_i5.Failure, int>(
+          this,
+          Invocation.method(
+            #stringToUnsignedInteger,
+            [str],
+          ),
+        ),
+        returnValueForMissingStub: _FakeEither_0<_i5.Failure, int>(
+          this,
+          Invocation.method(
+            #stringToUnsignedInteger,
+            [str],
+          ),
+        ),
+      ) as _i2.Either<_i5.Failure, int>);
+  @override
+  _i2.Either<_i5.Failure, _i6.DateParams> getMonthAndDayFromDateTime(
+          DateTime? date) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getMonthAndDayFromDateTime,
+          [date],
+        ),
+        returnValue: _FakeEither_0<_i5.Failure, _i6.DateParams>(
+          this,
+          Invocation.method(
+            #getMonthAndDayFromDateTime,
+            [date],
+          ),
+        ),
+        returnValueForMissingStub: _FakeEither_0<_i5.Failure, _i6.DateParams>(
+          this,
+          Invocation.method(
+            #getMonthAndDayFromDateTime,
+            [date],
+          ),
+        ),
+      ) as _i2.Either<_i5.Failure, _i6.DateParams>);
+  @override
+  _i2.Either<_i5.Failure, _i7.FavoriteDateTrivia> triviaToFavoriteDate(
+          _i6.DateTrivia? dateTrivia) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #triviaToFavoriteDate,
+          [dateTrivia],
+        ),
+        returnValue: _FakeEither_0<_i5.Failure, _i7.FavoriteDateTrivia>(
+          this,
+          Invocation.method(
+            #triviaToFavoriteDate,
+            [dateTrivia],
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeEither_0<_i5.Failure, _i7.FavoriteDateTrivia>(
+          this,
+          Invocation.method(
+            #triviaToFavoriteDate,
+            [dateTrivia],
+          ),
+        ),
+      ) as _i2.Either<_i5.Failure, _i7.FavoriteDateTrivia>);
+  @override
+  _i2.Either<_i5.Failure, _i7.FavoriteNumberTrivia> triviaToFavoriteNumber(
+          _i8.NumberTrivia? numberTrivia) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #triviaToFavoriteNumber,
+          [numberTrivia],
+        ),
+        returnValue: _FakeEither_0<_i5.Failure, _i7.FavoriteNumberTrivia>(
+          this,
+          Invocation.method(
+            #triviaToFavoriteNumber,
+            [numberTrivia],
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeEither_0<_i5.Failure, _i7.FavoriteNumberTrivia>(
+          this,
+          Invocation.method(
+            #triviaToFavoriteNumber,
+            [numberTrivia],
+          ),
+        ),
+      ) as _i2.Either<_i5.Failure, _i7.FavoriteNumberTrivia>);
 }

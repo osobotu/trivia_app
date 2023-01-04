@@ -16,14 +16,17 @@ abstract class DateTriviaLocalDataSource {
 
   Future<void> cacheDateTrivia(DateTriviaModel triviaToCache);
 
-  Future<void> addDateTriviaToFavorites(
-      FavoriteDateTriviaModel favoriteDateTrivia);
+  Future<void> addDateTriviaToFavorites(DateTriviaModel dateTrivia);
 }
 
 class DateTriviaLocalDataSourceImpl implements DateTriviaLocalDataSource {
   final SharedPreferences sharedPreferences;
+  final InputConverter inputConverter;
 
-  DateTriviaLocalDataSourceImpl({required this.sharedPreferences});
+  DateTriviaLocalDataSourceImpl({
+    required this.sharedPreferences,
+    required this.inputConverter,
+  });
 
   @override
   Future<void> cacheDateTrivia(DateTriviaModel triviaToCache) {
@@ -42,24 +45,35 @@ class DateTriviaLocalDataSourceImpl implements DateTriviaLocalDataSource {
   }
 
   @override
-  Future<void> addDateTriviaToFavorites(
-      FavoriteDateTriviaModel favoriteDateTrivia) {
-    final favoriteDateTriviaString =
-        sharedPreferences.getString(FAVORITE_DATE_TRIVIA);
-    if (favoriteDateTriviaString != null) {
-      final favoriteDateTriviaList =
-          List<Map<dynamic, dynamic>>.from(jsonDecode(favoriteDateTriviaString))
+  Future<void> addDateTriviaToFavorites(DateTriviaModel dateTrivia) async {
+    final failureOrFavoriteDateTrivia =
+        inputConverter.triviaToFavoriteDate(dateTrivia);
+
+    failureOrFavoriteDateTrivia.fold(
+      (failure) => throw InvalidInputException(),
+      (trivia) {
+        final favoriteDateTriviaString =
+            sharedPreferences.getString(FAVORITE_DATE_TRIVIA);
+
+        if (favoriteDateTriviaString != null) {
+          final favoriteDateTriviaList = List<Map<dynamic, dynamic>>.from(
+                  jsonDecode(favoriteDateTriviaString))
               .map(
                 (jsonMap) => FavoriteDateTriviaModel.fromJson(
                   Map<String, dynamic>.from(jsonMap),
                 ),
               )
               .toList();
-      favoriteDateTriviaList.add(favoriteDateTrivia);
-      return sharedPreferences.setString(
-          FAVORITE_DATE_TRIVIA, jsonEncode(favoriteDateTriviaList));
-    } else {
-      throw CacheException();
-    }
+          favoriteDateTriviaList.add(trivia as FavoriteDateTriviaModel);
+
+          sharedPreferences.setString(
+              FAVORITE_DATE_TRIVIA, jsonEncode(favoriteDateTriviaList));
+        } else {
+          throw CacheException();
+        }
+      },
+    );
+    // throw CacheException();
+    // return null;
   }
 }

@@ -26,7 +26,6 @@ void main() {
     createdAt: DateTime(2023),
     number: 1,
     text: 'Test Text',
-    id: testId,
   );
 
   final savedFavorites = [testFavoriteNumberTriviaModel];
